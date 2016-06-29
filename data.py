@@ -46,18 +46,14 @@ for line in f:
 		try:
 			if entry[4]==0:
 				print entry[1]
-				runningTotal += int(entry[2])
-				runningPaid += int(entry[3])
-				runningBalance += int(entry[4])
+				runningTotal,runningPaid,runningBalance=printnCalc(entry,runningTotal,runningPaid,runningBalance)
 		except:
 			pass
 	elif analysis=="pending":
 		try:
 			if entry[3]==0:
 				print entry[1] 
-				runningTotal += int(entry[2])
-				runningPaid += int(entry[3])
-				runningBalance += int(entry[4])
+				runningTotal,runningPaid,runningBalance=printnCalc(entry,runningTotal,runningPaid,runningBalance)
 		except:
 			pass
 	elif analysis=="open":
@@ -80,4 +76,7 @@ print analysis + " Paid = " + str(runningPaid)
 print analysis + " Balance = " + str(runningBalance)
 
 f.close
+
+
+
 
